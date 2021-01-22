@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    redis:
+      image: daocloud.io/library/redis:6.0.3-alpine3.11
+      container_name: redis6
+      command: redis-server /usr/local/etc/redis/redis.conf
+      ports:
+        - "6379:6379"
+      volumes:
+        - ./data:/data
+        - ./redis.conf:/usr/local/etc/redis/redis.conf
